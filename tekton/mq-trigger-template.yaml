@@ -1,21 +1,24 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
-  name: dev-triggertemplate
+  name: mq-trigger-template
 spec:
+  params:
+    - name: mq_pvc_sc
+      default: ibmc-file-gold-gid
   resourcetemplates:
-    - apiVersion: tekton.dev/v1beta1
+    - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
       metadata:
-        name: dev-pipelinerun-$(uid)
+        generateName: mq-cp4i-pipelinerun-
       spec:
+        serviceAccountName: mqpipeline
         pipelineRef:
-          name: dev-pipeline
-        serviceAccountName: pipeline
-        workspaces:
-          - name: git-source
-            persistentvolumeclaim:
-              claimName: git-source-workspace
+          name: mq-pipeline
         params:
-          - name: imageTag
-            value: $(uid)
+          - name: MQ_PVC_SC
+            value: $(params.mq_pvc_sc)
+        resources:
+          - name: source
+            resourceRef:
+              name: mq-git-repo
