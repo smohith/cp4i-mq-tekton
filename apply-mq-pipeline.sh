@@ -37,7 +37,7 @@ function usage() {
 # default vars
 NAMESPACE="cp4i"
 BRANCH="main"
-REPO="https://github.com/IBM/cp4i-deployment-samples.git"
+REPO="https://github.com/jackcarnes/cp4i-mq-tekton.git"
 TICK="\xE2\x9C\x85"
 CROSS="\xE2\x9D\x8C"
 ALL_DONE="\xF0\x9F\x92\xAF"
