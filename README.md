@@ -19,7 +19,7 @@
 1. Open the file `./install/install.sh` and insert the namespace where MQ is installed (cp4i, or mq...) also your Git token and git usernname
 
     - `MQ_NS`= 
-    -  PN_NS =
+    - `PN_NS`= 
     - `GIT_TOKEN`=paste git token here and remove brackets
     - `GIT_USERNAME`=paste github username here and remove brackets
 2. Update the Pipeline `mq-pipeline` (`/tekton/pipelines/mq-pipeline.yaml`) and change the `TARGET_NAMESPACE` to be the namespace where MQ is installed (cp4i, mq...), change 'QM_NAME' and 'QM_POD_NAME' to your queue manager name
