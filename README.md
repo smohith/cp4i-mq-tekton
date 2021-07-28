@@ -1,4 +1,4 @@
-# Tutorial: Setup IBM MQ with Tekton Pipeline on Openshift 4.4
+# Setup IBM MQ with Tekton Pipeline on Openshift
 
 ## Requirements
 
