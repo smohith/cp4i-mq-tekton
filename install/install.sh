@@ -3,16 +3,16 @@
 PIPELINE_NS=cp4i-mq
 PIPELINE_SA=pipeline
 
-MQ_NS=cp4i-mq
-PN_NS=cp4i
+MQ_NS=<insert the MQ namespace here>
+PN_NS=<insert the Platform Navigator namespace here>
 
 GIT_SECRET_NAME=user-at-github
 
 # Insert your Git Access Token below
-GIT_TOKEN=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
+GIT_TOKEN=<paste git token here and remove brackets>
 
 # Insert your Git UserName here
-GIT_USERNAME=jackcarnes
+GIT_USERNAME=<paste github username here and remove brackets>
 
 # Create the pipeline namespace
 kubectl create ns $PIPELINE_NS
