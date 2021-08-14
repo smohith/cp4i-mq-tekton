@@ -54,7 +54,7 @@ spec:
             - config.mqsc
           name: $MQSC_CM_NAME
     availability:
-      type: Single
+      type: SingleInstance
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
