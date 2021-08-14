@@ -18,11 +18,11 @@ metadata:
   name: $QM_POD_NAME
   namespace: $TARGET_NAMESPACE
 spec:
-  version: 9.2.0.0-r1
+  version: 9.2.2.0-r1
   license:
     accept: true
-    license: L-RJON-BN7PN3
-    use: Production
+    license: L-RJON-BXUPZ2
+    use: NonProduction
   pki:
     keys:
       - name: default
