@@ -9,10 +9,10 @@ spec:
       default: mq/basic/
     - name: QM_NAME
       type: string
-      default: mqxxpl
+      default: mq00pl
     - name: QM_POD_NAME
       type: string
-      default: mqxxpl
+      default: mq00pl
     - name: TARGET_NAMESPACE
       type: string
       default: cp4i-mq
