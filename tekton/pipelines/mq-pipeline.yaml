@@ -21,7 +21,7 @@ spec:
       default: mqcert-secret
     - name: MQ_PVC_SC
       type: string
-      default: ibmc-file-gold-gid
+      default: managed-nfs-storage
   resources:
     - name: source
       type: git
