@@ -2,10 +2,10 @@
 
 ## Requirements
 
-1. Openshift 4.4
-2. [IBM Cloud Pak for Integration V2020.2.1](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=AN&subtype=CA&htmlfid=897/ENUS220-168&appname=USN)
-3. [IBM MQ V 9.2.0.0-r1 and mq.ibm.com/v1beta1 Operator ibm-mq.v1.1.0](https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.2.0/com.ibm.mq.ctr.doc/ctr_api_v1beta1_QueueManager.htm)
-4. A namespace called `cp4i` where the MQ Operator ^ is installed
+1. Openshift 4.6
+2. [IBM Cloud Pak for Integration V2021.2.1](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=AN&subtype=CA&htmlfid=897/ENUS220-168&appname=USN)
+3. [IBM MQ V 9.2.3.0-r1 and mq.ibm.com/v1beta1 Operator ibm-mq.v1.6.0](https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.2.0/com.ibm.mq.ctr.doc/ctr_api_v1beta1_QueueManager.htm)
+4. A namespace called where the MQ Operator ^ is installed
 5. An entitlement key called `ibm-entitlement-key` [Get from here for IBM Employees](https://myibm.ibm.com/products-services/containerlibrary)
 6. A Github token [see here for creating one](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
@@ -16,13 +16,15 @@
 - Follow [GitHub’s](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo_) documentation on how to fork a repo to create your own fork of this repo.
 ## Step 2: Clone the forked repository onto your machine
 ## Step 3: Modify and run the install script 
-1. Open the file `./install/install.sh` and insert the namespace where MQ is installed (cp4i, or mq...) also your Git token and git usernname
+1. Open the file `./install/install.sh` and insert your namespace where MQ is installed (chopperxx...) also your Git token and git usernname
 
     - `MQ_NS`= 
     - `PN_NS`= 
     - `GIT_TOKEN`=paste git token here and remove brackets
     - `GIT_USERNAME`=paste github username here and remove brackets
-2. Update the Pipeline `mq-pipeline` (`/tekton/pipelines/mq-pipeline.yaml`) and change the `TARGET_NAMESPACE` to be the namespace where MQ is installed (cp4i, mq...), change 'QM_NAME' and 'QM_POD_NAME' to your queue manager name
+   
+2. Update the Pipeline `mq-pipeline` (`/tekton/pipelines/mq-pipeline.yaml`) and change the `TARGET_NAMESPACE` to be your namespace where MQ is installed (chopperxx...), change 'QM_NAME' and 'QM_POD_NAME' to your queue manager name
+
 3. Update the `PipelineResouce` to point to the url of your forked repository
     - update line 8 of this file `./tekton/resources/mq-git-repo-resource.yaml` and change the `value`
 4. Make the install script executable `chmod +x ./install/install.sh`
