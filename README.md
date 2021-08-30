@@ -3,7 +3,7 @@
 ## Requirements
 
 1. Openshift 4.6
-2. [IBM Cloud Pak for Integration V2021.2.1](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=AN&subtype=CA&htmlfid=897/ENUS220-168&appname=USN)
+2. [IBM Cloud Pak for Integration V2021.2.1](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/1/899/ENUSLP21-0291/index.html)
 3. [IBM MQ V 9.2.3.0-r1 and mq.ibm.com/v1beta1 Operator ibm-mq.v1.6.0](https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.2.0/com.ibm.mq.ctr.doc/ctr_api_v1beta1_QueueManager.htm)
 4. A namespace called where the MQ Operator ^ is installed
 5. An entitlement key called `ibm-entitlement-key` [Get from here for IBM Employees](https://myibm.ibm.com/products-services/containerlibrary)
