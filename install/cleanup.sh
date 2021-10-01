@@ -6,7 +6,7 @@ export QMname=mq00pl
 export LABEL="tekton.dev/task=deploy-qm"
 
 oc delete queuemanager $QMname -n $TARGET_NAMESPACE
-oc delete secret mqcert-secret -n $TARGET_NAMESPACE
+oc delete secret user-at-github -n $TARGET_NAMESPACE
 oc delete route el-el-cicd-mq-hook-route -n $TARGET_NAMESPACE
 oc delete task deploy-qm -n $TARGET_NAMESPACE
 oc delete eventlistener el-cicd-mq -n $TARGET_NAMESPACE
