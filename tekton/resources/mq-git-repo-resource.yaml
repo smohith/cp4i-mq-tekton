@@ -7,5 +7,5 @@ spec:
     - name: url
       value: 'https://github.com/ibm-cloudintegration/cp4i-mq-tekton'
     - name: revision
-      value: "master"
+      value: "main"
   type: git
