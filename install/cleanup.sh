@@ -15,3 +15,4 @@ oc delete eventlistener el-cicd-mq -n $TARGET_NAMESPACE
 oc delete pipeline mq-pipeline -n $TARGET_NAMESPACE
 oc delete pod -l $LABEL -n $TARGET_NAMESPACE
 oc delete pipelineRun -l $PL_LABEL -n $TARGET_NAMESPACE
+oc delete pvc data-$QMname-ibm-mq-0 -n $TARGET_NAMESPACE
