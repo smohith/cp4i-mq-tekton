@@ -20,6 +20,9 @@ kubectl create ns $PIPELINE_NS
 # Change to the new namespace
 oc project $PIPELINE_NS
 
+# Add security context
+oc adm policy add-scc-to-user privileged -z pipeline
+
 # create the git secret
 # oc secret new-basicauth $GIT_SECRET_NAME --username=$GIT_USERNAME --password $GIT_TOKEN
 oc create secret generic $GIT_SECRET_NAME --from-literal=username=$GIT_USERNAME --from-literal=password=$GIT_TOKEN --type=kubernetes.io/basic-auth
