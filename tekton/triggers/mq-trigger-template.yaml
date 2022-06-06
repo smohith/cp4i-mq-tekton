@@ -4,8 +4,9 @@ metadata:
   name: mq-trigger-template
 spec:
   params:
-    - name: mq_pvc_sc
-      default: ibmc-file-gold-gid
+    - name: MQ_PVC_SC
+      #default: ibmc-file-gold-gid
+      description: The storage class
   resourcetemplates:
     - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
@@ -17,8 +18,17 @@ spec:
           name: mq-pipeline
         params:
           - name: MQ_PVC_SC
-            value: $(params.mq_pvc_sc)
+            value: $(params.MQ_PVC_SC)
         resources:
           - name: source
             resourceRef:
               name: mq-git-repo
+---
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: mq-trigger-binding
+spec:
+  params:
+  - name: MQ_PVC_SC
+    value: ibmc-file-gold-gid
