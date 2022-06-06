@@ -5,7 +5,9 @@ metadata:
 spec:
   serviceAccountName: pipeline
   triggers:
-    - name: cicd-trigger
+    - bindings:
+        - kind: TriggerBinding
+          ref: mq-trigger-binding
       template:
         name: mq-trigger-template
       # interceptors:
