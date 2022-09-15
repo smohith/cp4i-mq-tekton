@@ -21,7 +21,8 @@ spec:
       default: mqcert-secret
     - name: MQ_PVC_SC
       type: string
-      default: managed-nfs-storage
+      default: ocs-storagecluster-cephfs
+      #default: ibmc-file-gold-gid
   resources:
     - name: source
       type: git
