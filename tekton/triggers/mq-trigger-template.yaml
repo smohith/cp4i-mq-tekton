@@ -31,4 +31,5 @@ metadata:
 spec:
   params:
   - name: MQ_PVC_SC
-    value: ibmc-file-gold-gid
+    value: ocs-storagecluster-cephfs
+    #value: ibmc-file-gold-gid
